@@ -79,3 +79,6 @@
 (defadvice switch-to-buffer (after switch-to-buffer-after-hack activate)
   (if (string= "*Message*" (buffer-name))
       (read-only-mode -1)))
+
+(let* ((file-name-handler-alist nil))
+  (require-init 'init-autoload))
